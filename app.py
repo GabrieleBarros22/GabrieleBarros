@@ -37,8 +37,11 @@ if __name__ == "__main__":
 # Rota para redirecionamento
 @app.route("/redirecionamento")
 def redirecionamento():
-    return redirect("/https://ptb.ifsp.edu.br/")
+    return redirect("https://ptb.ifsp.edu.br/")
 
+if __name__ == "__main__":
+    app.run(debug=True)
+    
 # Rota para abortar com um código de erro
 @app.route("/abortar")
 def abortar():
