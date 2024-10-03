@@ -8,36 +8,36 @@ def hello_world():
     return render_template("index.html")
 
 # Rota para o usuário
-@app.route("/user/<name>")
+@app.route("/user/GabrieleBarros")
 def user(name):
-    return f"Olá, {name}!"
+    return f"Hello Gabriele Barros!"
 
 # Rota para o contexto da requisição
 @app.route("/contextorequisicao")
 def contexto_requisicao():
     user_agent = request.headers.get('User-Agent')
-    return f"Seu User-Agent é: {user_agent}"
+    return f"Your browser is: {user_agent}"
 
 # Rota para retornar um código de status diferente
 @app.route("/codigostatusdiferente")
 def codigo_status_diferente():
-    return "Este é um código de status diferente!", 202
+    return "Bad request", 202
 
 # Rota para retornar um objeto como resposta JSON
 @app.route("/objetoresposta")
 def objeto_resposta():
-    data = {"message": "Esta é uma resposta JSON", "status": 200}
+    data = {"This document carries a cookie!", "status": 200}
     return jsonify(data)
 
 # Rota para redirecionamento
 @app.route("/redirecionamento")
 def redirecionamento():
-    return redirect("/")
+    return redirect("/https://ptb.ifsp.edu.br/")
 
 # Rota para abortar com um código de erro
 @app.route("/abortar")
 def abortar():
-    abort(403)  # 403 Forbidden
+    abort(404)  # 404 Not Found
 
 if __name__ == "__main__":
     app.run(debug=True)
