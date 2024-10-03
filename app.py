@@ -9,8 +9,11 @@ def hello_world():
 
 # Rota para o usuário
 @app.route("/user/GabrieleBarros")
-def user(name):
-    return f"Hello Gabriele Barros!"
+def user(nome):
+    return f"<h1>Hello, {nome.replace('_', ' ')}!</h1>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 # Rota para o contexto da requisição
 @app.route("/contextorequisicao")
