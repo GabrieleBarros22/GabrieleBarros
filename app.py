@@ -29,8 +29,10 @@ def codigo_status_diferente():
 # Rota para retornar um objeto como resposta JSON
 @app.route("/objetoresposta")
 def objeto_resposta():
-    data = {"This document carries a cookie!"}
-    return jsonify(data)
+    return "<h1>This document carries a cookie!</h1>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 # Rota para redirecionamento
 @app.route("/redirecionamento")
