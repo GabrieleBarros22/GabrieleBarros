@@ -7,10 +7,10 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
-# Rota para o usuário
+# Rota para exibir "Hello, Gabriele Barros!"
 @app.route("/user/GabrieleBarros")
-def user(nome):
-    return f"<h1>Hello, {nome.replace('_', ' ')}!</h1>"
+def user_gabriele():
+    return "<h1>Hello, Gabriele Barros!</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
